@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    flex-wrap: wrap;
+}
+body{
+    width: 100%;
+    height: 200vh;
+    background-color: #F8F9FA;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    display :flex;
+    background-color: bisque;
+    margin:10px 20px 0px 30px;
+    border: 2px solid black;
+    position: sticky;
+    top:0;
+   
+
+}
+.navbar img{
+width: 100px;
+}
+
+.link{
+  display: flex;
+  gap: 25px;
+}
+
+.link a{
+    color: black;
+}
+/* button{
+    background-color:#000066 ;
+    color: white;
+    width: 110px;
+    height: 30px;
+} */
+
+
+
+.cards{
+   width: 800px;
+    display :flex;
+    background-color: bisque;
+    margin: 10px;
+    justify-content:centers;
+    gap: 20px;
+    border: 2px solid black;
+    position: sticky;
+    top:0;
+    
+}
+ .card1{
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+    border: 2px solid black;
+
+   
+} 
+.card1:nth-child(even)::after{
+    width: 100%;
+    position: absolute;
+    height: 0%;
+    top: 0%;
+    background-color: brown;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    background-color: rgb(243, 247, 7);
+    z-index: -1;
+    transition: all 5s;
+    
+}
+.card1:nth-child(odd)::after{
+   content: '';
+   position: absolute;
+   height: 0%;
+   width: 100%;
+   left: 0;
+   top: 0; 
+   z-index: -1;
+   background-color: greenyellow;
+   transition: 5s;
+
+}
+.card1:hover::after{
+    height: 100%;
+}
+.card1:nth-child(odd){
+    position: sticky;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: rebeccapurple;
+    }
+    /* .cards{
+        flex-direction: column;
+        align-items: start;
+    } */
+    .navbar{
+        /* flex-direction: column; */
+        align-content: start;
+        /* flex-direction: column-reverse; */
+        /* flex-direction: row-reverse; */
+    }
+    .link{
+        display: none;
+         /* flex-direction: column; */
+        
+    
+        
+    }
+  }
+
+
+  /* button  */
+
+  .hover-btn{
+     width: 150px;
+     height: 50px;
+     margin: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     background-color: yellow;
+     overflow: hidden;
+     position: relative;
+     transition: all .3s;
+     z-index: 1;
+     cursor: pointer;
+    }
+
+  .hover-btn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    left: -100%;
+    z-index: -1;
+  }
+  .text{
+    width: 50px;
+    /* background-color: red; */
+    position: relative;
+    color: transparent;
+    overflow: hidden;
+  }
+  .text::after{
+    content: 'Hover';
+    position: absolute;
+    color: black;
+    left: -100%;
+    transition: all .3s;
+  }
+  .text::before{
+    content: 'Hover';
+    position: absolute;
+    left: 0;
+    color: black;
+    transition: all .3s;
+  }
+  .hover-btn:hover .text::after{
+    left: 0;
+  }
+
+  .hover-btn:hover .text::before{
+    left: 100%;
+  }
+
+  .circle{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+    z-index: 1;
+  }
+
+  .circle::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    left: -100%;
+    border-radius: 50%;
+    transition: all .3s;
+    z-index: -1;
+  }
+
+
+.hover-btn:hover .circle::after{
+    left: 0;
+}
+.hover-btn:hover::after{
+    left: 0;
+   
+}
